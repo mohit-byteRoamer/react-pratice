@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Counter from "./components/counter";
 import DataUploader from "./components/uploadData.js";
 import Form from "./components/form";
+import PaginationList from "./components/pagination-list.js";
+import MemoizedValueComponent from "./hooks/useMemo.js";
+import RichEditor from "./components/rich-editor.js";
 function App() {
   console.log("App");
 
@@ -15,16 +18,21 @@ function App() {
   const decrementCount = () => {
     setCount(count - 1);
   };
-
+ 
   return (
     <div className="App">
-      <Counter
+      {/* <Counter
         count={count}
         incrementCount={incrementCount}
         decrementCount={decrementCount}
       />
       <Form />
-      <DataUploader />
+      <DataUploader /> */}
+      <MemoizedValueComponent />
+      {/* <PaginationList /> */}
+      <div style={{ width: "50%" }}>
+        <RichEditor />
+      </div>
     </div>
   );
 }
